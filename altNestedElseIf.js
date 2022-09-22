@@ -13,7 +13,7 @@ function getPrice() {
 }
 
 // getPrice();
-
+// Alternet approach of nested If-Else statement
 const dataMap = {
     Burger: "Its a Burger",
     Pizza: "Its a Pizza",
