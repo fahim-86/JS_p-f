@@ -1,0 +1,33 @@
+<select name="" id="selectCountries">
+    <option value="">Choose One</option>
+</select>
+
+<br>
+<p>Capital is: <b id="capital"></b></p>
+<img style="max-height: 150px; margin: 20px;" id="imgFlag">
+
+<script>
+    selectCountries.onchange = showFlag;
+    
+    function showFlag() {
+        imgFlag.src = this.value;
+        capital.innerHTML = this.capital;
+    }
+//Problem: grab json data that contains key = 0
+    fetch("https://restcountries.com/v3.1/all")
+        .then(response => response.json())
+        .then(countries => show(countries));
+        function show(countries){
+            for(let country of countries){
+                const option = document.createElement("option");
+                console.log(country);
+                console.log(capital[0]);
+                option.text = country.name.common;
+                capital.innerHTML = capital[0];
+                option.value = country.flags.png;
+                selectCountries.appendChild(option);
+            }
+        }
+
+
+</script>

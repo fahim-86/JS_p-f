@@ -1,3 +1,4 @@
+//bind Object using Proxy() function, set condition to a specific value of an Object property
 const person = {
     age: 20,
     name: "Fahim"
